@@ -2,15 +2,14 @@
 
 // 双面模式，会加入空白页，便于打印
 #let twoside = false
-// #let twoside = true
 
 #let (
   doc, preface, mainmatter, mainmatter-end, appendix,
-  fonts-display-page, cover, decl-page, abstract, abstract-en, outline-page, list-of-figures, list-of-tables, notation, acknowledgement,
+  fonts-display-page, cover, decl-page, abstract, abstract-en, outline-page, notation, acknowledgement,
 ) = documentclass(
   type: "master",
   degree: "academic",
-  // anonymous: true,  // 盲审模式
+  anonymous: false,  // 盲审模式
   twoside: twoside,  // 双面模式，会加入空白页，便于打印
   // 可自定义字体，先英文字体后中文字体，应传入「宋体」、「黑体」、「楷体」、「仿宋」、「等宽」
   // fonts: (楷体: ("Times New Roman", "FZKai-Z03S")),
@@ -19,15 +18,14 @@
     title-en: "My Title in English",
     grade: "2021",
     student-id: "202120293792",
-    author: "张三",
-    author-en: "Ming Xing",
-    department: "某学院",
+    author: "姓名",
+    author-en: "Xing Ming",
+    department: "信息科学与工程学院",
     department-en: "School of Chemistry and Chemical Engineering",
     major: "某专业",
-    major-en: "Chemistry",
-    supervisor: ("李四", "教授"),
-    supervisor-en: "Professor 
-    My Supervisor",
+    major-en: "some major",
+    supervisor: ("张三的", "教授"),
+    supervisor-en: "Professor My Supervisor",
     // supervisor-ii: ("王五", "副教授"),
     // supervisor-ii-en: "Professor My Supervisor",
     submit-date: datetime.today(),
@@ -36,9 +34,6 @@
 
 // 文稿设置
 #show: doc
-
-// 字体展示测试页
-// #fonts-display-page()
 
 // 封面页
 #cover()
@@ -67,12 +62,6 @@
 // 目录
 #outline-page()
 
-// 插图目录
-#list-of-figures()
-
-// 表格目录
-#list-of-tables()
-
 // 正文
 #show: mainmatter
 
@@ -87,27 +76,6 @@
 == 脚注
 
 我们可以添加一个脚注。#footnote[脚注内容]
-
-== 列表
-
-=== 无序列表
-
-- 无序列表项一
-- 无序列表项二
-  - 无序子列表项一
-  - 无序子列表项二
-
-=== 有序列表
-
-+ 有序列表项一
-+ 有序列表项二
-  + 有序子列表项一
-  + 有序子列表项二
-
-=== 术语列表
-
-/ 术语一: 术语解释
-/ 术语二: 术语解释
 
 == 图表
 
@@ -137,7 +105,7 @@
 ]))
 
 #fig(
-  image("hnu-thesis/assets/vi/nju-emblem.svg", width: 20%),
+  image("hnu-thesis\assets\vi\hunnu_log_black.svg", width: 20%),
   caption: [图片测试],
 ) <nju-logo>
 
@@ -216,6 +184,6 @@ def add(x, y):
 附录内容，这里也可以加入图片，例如@fig:appendix-img。
 
 #fig(
-  image("hnu-thesis/assets/vi/nju-emblem.svg", width: 20%),
+  image("hnu-thesis\assets\vi\hunnu_log_black.svg", width: 20%),
   caption: [图片测试],
 ) <appendix-img>

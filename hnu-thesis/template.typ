@@ -8,14 +8,11 @@
 #import "layouts/preface.typ": preface
 #import "layouts/mainmatter.typ": mainmatter
 #import "layouts/appendix.typ": appendix
-#import "templates/fonts-display-page.typ": fonts-display-page
 #import "templates/master-cover.typ": master-cover
 #import "templates/master-decl-page.typ": master-decl-page
 #import "templates/master-abstract.typ": master-abstract
 #import "templates/master-abstract-en.typ": master-abstract-en
 #import "templates/bachelor-outline-page.typ": bachelor-outline-page
-#import "templates/list-of-figures.typ": list-of-figures
-#import "templates/list-of-tables.typ": list-of-tables
 #import "templates/notation.typ": notation
 #import "templates/acknowledgement.typ": acknowledgement
 #import "utils/custom-numbering.typ": custom-numbering
@@ -39,12 +36,12 @@
   // 默认参数
   fonts = 字体 + fonts
   info = (
-    title: ("基于 Typst 的", "湖南师范大学学位论文"),
-    title-en: "HNU Thesis Template for Typst",
+    title: ("论文标题"),
+    title-en: "English Title",
     grade: "2021",
     student-id: "202129293792",
-    author: "法外狂徒",
-    author-en: "out of law",
+    author: "姓名",
+    author-en: "Xing Ming",
     department: "某学院",
     department-en: "XX Department",
     major: "某专业",
@@ -60,16 +57,16 @@
     defend-date: datetime.today(),
     confer-date: datetime.today(),
     bottom-date: datetime.today(),
-    thesis_type: "科学学位",
+    thesis_type: $checkmark$ + " 科学学位 " + $square.stroked.medium$ + " 专业学位",
     thesis_number: "4631471641692346162",
-    chairman: "某某某 教授",
+    // chairman: "某某某 教授",
     reviewer: ("某某某 教授", "某某某 教授"),
-    clc: "O643.12",
-    udc: "544.4",
+    // clc: "O643.12",
+    // udc: "544.4",
     secret-level: "公开",
-    supervisor-contact: "湖南师范大学 湖南省长沙市岳麓区橘子洲街道",
+    // supervisor-contact: "湖南师范大学 湖南省长沙市岳麓区橘子洲街道",
     email: "xyz@smail.hnu.edu.cn",
-    school-code: "10540",
+    school-code: "10542",
     degree: auto,
     degree-en: auto,
   ) + info
@@ -169,24 +166,6 @@
     // 目录页
     outline-page: (..args) => {
       bachelor-outline-page(
-        twoside: twoside,
-        ..args,
-        fonts: fonts + args.named().at("fonts", default: (:)),
-      )
-    },
-
-    // 插图目录页
-    list-of-figures: (..args) => {
-      list-of-figures(
-        twoside: twoside,
-        ..args,
-        fonts: fonts + args.named().at("fonts", default: (:)),
-      )
-    },
-
-    // 表格目录页
-    list-of-tables: (..args) => {
-      list-of-tables(
         twoside: twoside,
         ..args,
         fonts: fonts + args.named().at("fonts", default: (:)),

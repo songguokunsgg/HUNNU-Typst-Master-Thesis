@@ -9,7 +9,9 @@
   fonts: (:),
   // 其他参数
   depth: 3,
-  title: "目　　录",
+  title: text(font: 字体.黑体)[
+    目　　录
+  ],
   outlined: true,
   title-vspace: 32pt,
   title-text-args: auto,
@@ -40,6 +42,15 @@
     font = (fonts.黑体, fonts.宋体)
   }
 
+  // 设置页眉
+  set page(
+          header: 
+      stack(
+        align(center, text(size: 字号.五号,"硕士学位论文")),
+        v(0.25em),
+        line(length: 100%, stroke: 0.5pt + black),
+      )
+  )
   // 2.  正式渲染
   pagebreak(weak: true, to: if twoside { "odd" })
 
@@ -73,6 +84,7 @@
     fill: fill,
     ..args,
   )
+
 
   // 显示目录
   outline(title: none, depth: depth)

@@ -18,7 +18,7 @@
   min-title-lines: 2,
   min-reviewer-lines: 5,
   info-inset: (x: 0pt, bottom: 0.5pt),
-  info-key-width: 86pt,
+  info-key-width: 110pt,
   info-column-gutter: 18pt,
   info-row-gutter: 12pt,
   meta-block-inset: (left: -15pt),
@@ -71,11 +71,7 @@
   }
   // 2.4 处理 degree
   if (info.degree == auto) {
-    if (type == "doctor") {
-      info.degree = "工程博士"
-    } else {
-      info.degree = "工程硕士"
-    }
+    info.degree = "工程硕士"
   }
 
   // 3.  内置辅助函数
@@ -136,19 +132,20 @@
   if (anonymous) {
     v(50pt)
   } else {
-    pad(image("../assets/vi/hunnu_log_red.svg", width: 15cm))
+    pad(image("../assets/vi/hunnu_log_red.svg", width: 14.5cm))
     v(45pt)
   }
 
   // 将中文之间的空格间隙从 0.25 em 调整到 0.5 em
+  // 42pt 就是初号字
   text(size: 42pt, font: fonts.黑体, spacing: 200%, weight: "bold",
     "硕士学位论文",
   )
   
   if (anonymous) {
-    v(132pt)
+    v(5cm)
   } else {
-    v(30pt)
+    v(1.5cm)
   }
 
   text(size: 22pt, font: fonts.黑体, spacing: 200%, weight: "bold")[
@@ -158,9 +155,9 @@
     ]
   ]
 
-  v(34pt)
+  v(1.5cm)
 
-  block(width: 320pt, grid(
+  block(width: 330pt, grid(
     columns: (info-key-width, 1fr),
     column-gutter: info-column-gutter,
     row-gutter: info-row-gutter,
@@ -170,7 +167,7 @@
     info-value("thesis_type", info.thesis_type),
     info-key("研究生姓名"),
     info-value("author", info.author),
-    info-key("导师姓名"),
+    info-key("导师姓名、职称"),
     info-value("supervisor", info.supervisor.intersperse(" ").sum()),
     ..(if info.supervisor-ii != () {(
       info-key("　"),
@@ -180,7 +177,7 @@
     info-value("thesis_number", info.thesis_number)
   ))
 
-  v(50pt)
+  v(1.5cm)
 
   text(font: fonts.仿宋, size: 字号.四号)[
     湖南师范大学学位评定委员会办公室
