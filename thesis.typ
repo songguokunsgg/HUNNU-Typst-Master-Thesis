@@ -171,7 +171,7 @@ int main() {
 表格看似复杂，但使用gpt或者chatglm都可以轻松学会转化规则，直接让AI帮助转化即可。
 
 #fig(
-  image("hnu-thesis\assets\vi\hunnu_log_black.svg", width: 50%),
+  image("hnu-thesis/assets/vi/hunnu_log_red.svg", width: 50%),
   caption: [图片测试],
 ) <nju-logo>
 
@@ -448,6 +448,6 @@ let (_, y, _) = (1, 2, 3)
 附录内容，这里也可以加入图片，例如@fig:appendix-img。
 
 #fig(
-  image("hnu-thesis\assets\vi\hunnu_log_black.svg", width: 20%),
+  image("hnu-thesis/assets/vi/hunnu_log_red.svg", width: 20%),
   caption: [图片测试],
 ) <appendix-img>
