@@ -132,7 +132,7 @@
   if (anonymous) {
     v(50pt)
   } else {
-    pad(image("../assets/vi/hunnu_log_red.svg", width: 14.5cm))
+    pad(image("../assets/vi/hunnu_log_red.png", width: 14.5cm))
     v(45pt)
   }
 
