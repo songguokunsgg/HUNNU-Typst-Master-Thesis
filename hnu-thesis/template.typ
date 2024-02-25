@@ -22,6 +22,7 @@
 #import "@preview/i-figured:0.2.2": show-figure, show-equation
 #import "utils/style.typ": 字体
 #import "utils/style.typ": 字号
+#import "@preview/algo:0.3.3": algo, i, d, comment, code
 
 // 使用函数闭包特性，通过 `documentclass` 函数类进行全局信息配置，然后暴露出拥有了全局配置的、具体的 `layouts` 和 `templates` 内部函数。
 #let documentclass(

@@ -1,5 +1,4 @@
-#import "hnu-thesis/template.typ": documentclass, tablex, fig, tlt, indent
-
+#import "hnu-thesis/template.typ": documentclass, tablex, fig, tlt, indent, algo, i, d, comment, code
 // 双面模式，会加入空白页，便于打印
 #let twoside = false
 
@@ -65,6 +64,11 @@
 
 // 正文
 #show: mainmatter
+
+#import "@preview/ctheorems:1.1.1": *
+#show: thmrules // 添加定理环境
+#set heading(numbering: "1.1.")
+#import "hnu-thesis/theorem.typ": definition, theorem, corollary, example, proof
 
 // 符号表
 #notation[
@@ -208,6 +212,67 @@ $ y = integral_1^2 x^2 dif x $ <->
 而后续数学公式仍然能正常编号。
 
 $ F_n = floor(1 / sqrt(5) phi.alt^n) $
+
+== 定理环境
+
+使用 https://github.com/sahasatvik/typst-theorems 作为定理环境。常用的主要有definition、example、theorem、proof和corolary。
+
+#definition[
+  这是一条中文的定义，如果这条句子很长，定义是可以自动进行换行的。
+]
+#example[
+  这是示例的使用情况，他们都可以使用英文书写。
+]
+
+#theorem("括注可以这样子写")[
+  这是一条定理环境。
+]
+#proof[
+  在这里写你的证明。你可以引用 @cor_largest_prime
+]
+
+#corollary[
+  corolary 1.
+] <cor_largest_prime>
+#corollary[
+  corolary 2. 
+]
+
+== 算法
+
+\#algo 表示进入算法环境。\#i表示缩进，\#d表示缩进退一格。\#comment表示注释
+
+#algo(
+  title: [                    // note that title and parameters
+    #set text(size: 15pt)     // can be content
+    *Input*：#math.italic("n") \
+    *Output*: Fib(#math.italic("n")) \
+    #emph(smallcaps("Fib"))
+  ],
+  parameters: ([#math.italic("n")],),
+  comment-prefix: [#sym.triangle.stroked.r ],
+  comment-styles: (fill: rgb(100%, 0%, 0%)),
+  indent-size: 15pt,
+  indent-guides: 1pt + gray,
+  row-gutter: 5pt,
+  column-gutter: 5pt,
+  inset: 5pt,
+  stroke: 2pt + black,
+  fill: none,
+)[
+  if $n < 0$:#i\
+    return null#d\
+  if $n = 0$ or $n = 1$:#i\
+    return $n$#d\
+  \
+  let $x <- 0$\
+  let $y <- 1$\
+  for $i <- 2$ to $n-1$:#i #comment[so dynamic!]\
+    let $z <- x+y$\
+    $x <- y$\
+    $y <- z$#d\
+  return $x+y$
+]
 
 == 参考文献
 
