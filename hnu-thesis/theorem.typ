@@ -2,19 +2,23 @@
 #show: thmrules // 添加定理环境
 #set heading(numbering: "1.1.")
 
-#let theorem = thmbox("theorem", "Theorem", inset: (x: 1.2em, top: 1em))
+#let theorem = thmbox("theorem", "定理", inset: (x: 1.2em, top: 1em))
 #let corollary = thmplain(
   "corollary",
   "Corollary",
   base: "theorem",
   titlefmt: strong
 )
-#let definition = thmbox("definition", "Definition", inset: (x: 1.2em, top: 1em))
+#let definition = thmbox("definition", "Definition", inset: (x: 2.2em, top: 1em))
 
-#let example = thmplain("example", "Example").with(numbering: none)
+#let example = thmplain("example", "示例").with(numbering: none)
 #let proof = thmplain(
   "proof",
   "Proof",
   base: "theorem",
   bodyfmt: body => [#body #h(1fr) $square$]
 ).with(numbering: none)
+
+#let proposition = thmbox("proposition", "命题", inset: (x: 1.2em, top: 1em))
+
+#let algorithm = thmbox("algorithm", "算法", inset: (x: 1.2em, top: 1em))
