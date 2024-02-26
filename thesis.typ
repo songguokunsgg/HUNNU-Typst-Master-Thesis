@@ -1,4 +1,4 @@
-#import "hnu-thesis/template.typ": documentclass, tablex, fig, tlt, indent, algo, i, d, comment, code
+#import "hnu-thesis/template.typ": documentclass, tablex, fig, tlt, indent, algo, i, d, comment, code, 字体, 字号, algo_parameters
 // 双面模式，会加入空白页，便于打印
 #let twoside = false
 
@@ -68,7 +68,7 @@
 #import "@preview/ctheorems:1.1.1": *
 #show: thmrules // 添加定理环境
 #set heading(numbering: "1.1.")
-#import "hnu-thesis/theorem.typ": definition, theorem, corollary, example, proof, algorithm
+#import "hnu-thesis/utils/theorem.typ": definition, theorem, corollary, example, proof, algorithm
 
 // 符号表
 #notation[
@@ -242,70 +242,31 @@ $ F_n = floor(1 / sqrt(5) phi.alt^n) $
 
 \#algo 表示进入算法环境。\#i表示缩进，\#d表示缩进退一格。\#comment表示注释
 
-#algo(
-  title: [                    // note that title and parameters
-    #set text(size: 15pt)     // can be content
-    *Input*：#math.italic("n") \
-    *Output*: Fib(#math.italic("n")) \
-    #emph(smallcaps("Fib"))
-  ],
-  parameters: ([#math.italic("n")],),
-  comment-prefix: [#sym.triangle.stroked.r ],
-  comment-styles: (fill: rgb(0%, 0%, 0%)),
-  indent-size: 15pt,
-  indent-guides: 1pt + gray,
-  row-gutter: 5pt,
-  column-gutter: 5pt,
-  inset: 5pt,
-  stroke: 2pt + black,
-  fill: none,
-)[
-  if $n < 0$:#i\
-    return null#d\
-  if $n = 0$ or $n = 1$:#i\
-    return $n$#d\
-  \
-  let $x <- 0$\
-  let $y <- 1$\
-  for $i <- 2$ to $n-1$:#i #comment[so dynamic!]\
-    let $z <- x+y$\
-    $x <- y$\
-    $y <- z$#d\
-  return $x+y$
-]
-
 如果你需要引用算法，请把它包裹在 \#algorithm，这是一项无奈之举，目前没有找到更好的方案，或者，你可以手动编号。
 
 #algorithm[
   #algo(
-    title: [                    // note that title and parameters
-      #set text(size: 15pt)     // can be content
+    ..algo_parameters,
+    title: [
       *Input*：#math.italic("n") \
-      *Output*: Fib(#math.italic("n")) \
-      #emph(smallcaps("Fib"))
+      *Output*: $F i b(n)$ \
     ],
-    parameters: ([#math.italic("n")],),
-    comment-prefix: [#sym.triangle.stroked.r ],
-    comment-styles: (fill: rgb(0%, 0%, 0%)),
-    indent-size: 15pt,
-    indent-guides: 1pt + gray,
-    row-gutter: 5pt,
-    column-gutter: 5pt,
-    inset: 5pt,
-    stroke: 2pt + black,
-    fill: none,
+    header: none,
+    parameters: ([#math.italic("ODT")],)
   )[
     if $n < 0$:#i\
       return null#d\
+    end if \
     if $n = 0$ or $n = 1$:#i\
       return $n$#d\
-    \
+    end if \
     let $x <- 0$\
     let $y <- 1$\
     for $i <- 2$ to $n-1$:#i #comment[so dynamic!]\
       let $z <- x+y$\
       $x <- y$\
       $y <- z$#d\
+    end for \
     return $x+y$
   ]
 ]<alg:examalgo>
