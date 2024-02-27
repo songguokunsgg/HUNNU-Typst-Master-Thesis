@@ -1,0 +1,81 @@
+@article{danielsMonotonePartiallyMonotone2010,
+  title = {Monotone and {{Partially Monotone Neural Networks}}},
+  author = {Daniels, Hennie and Velikova, Marina},
+  year = {2010},
+  journal = {IEEE Transactions on Neural Networks},
+  volume = {21},
+  number = {6},
+  pages = {906--917},
+  issn = {1941-0093},
+  abstract = {In many classification and prediction problems it is known that the response variable depends on certain explanatory variables. Monotone neural networks can be used as powerful tools to build monotone models with better accuracy and lower variance compared to ordinary nonmonotone models. Monotonicity is usually obtained by putting constraints on the parameters of the network. In this paper, we will clarify some of the theoretical results on monotone neural networks with positive weights, issues that are sometimes misunderstood in the neural network literature. Furthermore, we will generalize some of the results obtained by Sill for the so-called min-max networks to the case of partially monotone problems. The method is illustrated in practical case studies.}
+}
+
+@article{granittoNeuralNetworkEnsembles2005,
+  title = {Neural {{Network Ensembles}}: {{Evaluation}} of {{Aggregation Algorithms}}},
+  author = {Granitto, P. M. and Verdes, P. F. and Ceccatto, H. A.},
+  year = {2005},
+  journal = {Artificial Intelligence},
+  volume = {163},
+  number = {2},
+  pages = {139--162},
+  issn = {0004-3702},
+  abstract = {Ensembles of artificial neural networks show improved generalization capabilities that outperform those of single networks. However, for aggregation to be effective, the individual networks must be as accurate and diverse as possible. An important problem is, then, how to tune the aggregate members in order to have an optimal compromise between these two conflicting conditions. We present here an extensive evaluation of several algorithms for ensemble construction, including new proposals and comparing them with standard methods in the literature. We also discuss a potential problem with sequential aggregation algorithms: the non-frequent but damaging selection through their heuristics of particularly bad ensemble members. We introduce modified algorithms that cope with this problem by allowing individual weighting of aggregate members. Our algorithms and their weighted modifications are favorably tested against other methods in the literature, producing a sensible improvement in performance on most of the standard statistical databases used as benchmarks. (c) 2004 Elsevier B.V. All rights reserved.},
+  langid = {english},
+  keywords = {ensemble methods,machine learning,neural networks,regression}
+}
+
+@article{huangMobileNetworkTraffic2022,
+  title = {Mobile {{Network Traffic Prediction Based}} on {{Seasonal Adjacent Windows Sampling}} and {{Conditional Probability Estimation}}},
+  author = {Huang, Jin and Xiao, Ming},
+  year = {2022},
+  journal = {IEEE Transactions on Big Data},
+  volume = {8},
+  number = {5},
+  pages = {1155--1168},
+  issn = {2332-7790, 2372-2096},
+  urldate = {2023-03-14},
+  abstract = {Mobile operators collect and store the network generated traffic data for analysis. Time Series Prediction (TSP) has been used in mobile network traffic data analysis to produce predictive results for network planning and resource allocation. We propose a novel method of predicting mobile network traffic using neural networks based on conditional probability modeling between adjacent data windows. Firstly, we develop a pre-processing method to aggregate the raw traffic log data and sample the aggregated time series to adjacent data windows, as training samples. Secondly, we use neural networks to parameterize the conditional probability between adjacent data windows and estimate the probability by training the neural networks with sampled data. The estimated conditional probability is then used to ensemble the prediction. Thirdly, we show theoretically that the prediction based on all historical data is equivalent to the prediction based on just previous data window, given the estimation of conditional probability between adjacent data windows. We also analyze computation complexity and show that seasonality will reduce the computational complexity. In the experiment, we compare the prediction performance among the models with different seasonality, sample size and number of hidden layers, and show that the proposed schemes achieve better prediction accuracy than state-of-the-art.},
+  langid = {english},
+  file = {C:\Users\sukipai\Zotero\storage\3JWPASDD\Huang 和 Xiao - 2022 - Mobile Network Traffic Prediction Based on Seasona.pdf}
+}
+
+@article{wangTimeSeriesForecastingFuzzyProbabilistic2022,
+  title = {Time-{{Series Forecasting}} via {{Fuzzy-Probabilistic Approach With Evolving Clustering-Based Granulation}}},
+  author = {na Wang, Wei and Liu, Wan Quan and Chen, Hui},
+  year = {2022},
+  journal = {IEEE Transactions on Fuzzy Systems},
+  volume = {30},
+  number = {12},
+  pages = {5324--5336},
+  issn = {1063-6706, 1941-0034},
+  urldate = {2023-07-04},
+  abstract = {Time-series prediction based on information granule in which the algorithm is developed by deriving the relations existing in the granular time series, has achieved excellent success. However, the existing uncertainty in data and the computational demand of the granulation process make it difficult for these methods to accurately and efficiently achieve long-term prediction. In this article, a fuzzy-probabilistic prediction approach with evolving clustering-based granulation is proposed. First, the evolving clustering-based granulation strategy is proposed to transform the original numerical data into information granules. The granulation process is performed in an incremental way and the information granules are represented with the triplets, which can efficiently reduce the computation overhead. Then, the proposed information granule clustering is used to derive the group relations in the information granules. Based on the logical relationships of information granules in the temporal order, the information granule forecasting the integrated fuzzy and probability theory is proposed to deal with uncertainties and perform final long-term prediction. A series of experiments using publicly available time series are conducted, and the comparative analysis demonstrates that the proposed approach can achieve a better performance for regular and Big Data time series than the existing granular and numeric models for long-term prediction.},
+  langid = {english},
+  file = {C:\Users\sukipai\Zotero\storage\FDLBLDT2\Wang 等 - 2022 - Time-Series Forecasting via Fuzzy-Probabilistic Ap.pdf}
+}
+
+@misc{wanNBDTNeuralBackedDecision2021,
+  title = {{{NBDT}}: {{Neural-Backed Decision Trees}}},
+  shorttitle = {{{NBDT}}},
+  author = {Wan, Alvin and Dunlap, Lisa and Ho, Daniel and Yin, Jihan and Lee, Scott and Jin, Henry and Petryk, Suzanne and Bargal, Sarah Adel and Gonzalez, Joseph E.},
+  year = {2021},
+  number = {arXiv:2004.00221},
+  eprint = {2004.00221},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  urldate = {2022-12-16},
+  abstract = {Machine learning applications such as finance and medicine demand accurate and justifiable predictions, barring most deep learning methods from use. In response, previous work combines decision trees with deep learning, yielding models that (1) sacrifice interpretability for accuracy or (2) sacrifice accuracy for interpretability. We forgo this dilemma by jointly improving accuracy and interpretability using Neural-Backed Decision Trees (NBDTs). NBDTs replace a neural network's final linear layer with a differentiable sequence of decisions and a surrogate loss. This forces the model to learn high-level concepts and lessens reliance on highlyuncertain decisions, yielding (1) accuracy: NBDTs match or outperform modern neural networks on CIFAR, ImageNet and better generalize to unseen classes by up to 16\%. Furthermore, our surrogate loss improves the original model's accuracy by up to 2\%. NBDTs also afford (2) interpretability: improving human trust by clearly identifying model mistakes and assisting in dataset debugging. Code and pretrained NBDTs are at github.com/alvinwan/neural-backed-decision-trees.},
+  archiveprefix = {arxiv},
+  langid = {english},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing},
+  file = {C:\Users\sukipai\Zotero\storage\LLCVAVH6\Wan 等 - 2021 - NBDT Neural-Backed Decision Trees.pdf}
+}
+
+@article{wehenkelUnconstrainedMonotonicNeural2019,
+  title = {Unconstrained {{Monotonic Neural Networks}}},
+  author = {Wehenkel, Antoine and Louppe, Gilles},
+  year = {2019},
+  journal = {ArXiv},
+  volume = {abs/1908.05164},
+  file = {C:\Users\sukipai\Zotero\storage\4MA84PHR\1908.05164v3.pdf}
+}

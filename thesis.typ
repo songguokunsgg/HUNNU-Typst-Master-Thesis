@@ -293,9 +293,21 @@ $ F_n = floor(1 / sqrt(5) phi.alt^n) $
 
 == 参考文献
 
-可以像这样引用参考文献：@wang2010guide 和 @kopka2004guide。
-
 建议使用betterbibtex导出bib文件，调整好citekey后直接\@citekey即可
+
+机器学习是一门人工智能（AI）的分支@wehenkelUnconstrainedMonotonicNeural2019，主要研究如何让计算机从数据或经验中学习，并据此进行预测或决策@wangHuanJieSuiJiYiZhiXingDeJiNiZhiShuYuJueCeShuFangFa2023。简单来说，机器学习就是用算法来解析数据、从中学习、然后做出决策或预测。
+机器学习可以分为几种主要类型：
+
+1. *监督学习（Supervised Learning）*: 在这种模式下，算法从标记过的训练数据中学习，然后用学到的知识来预测新的、未标记的数据@granittoNeuralNetworkEnsembles2005。例如，通过分析过去的房价数据来预测未来的房价。
+2. *无监督学习（Unsupervised Learning）*: 算法在没有标记的数据集上进行训练，试图自己找出数据内在的结构或规律。聚类和关联规则学习就是两个常见的例子@danielsMonotonePartiallyMonotone2010。
+3. *半监督学习（Semi-supervised Learning）*: 这是一种介于监督学习和无监督学习之间的方法，其中一部分数据是标记的，但大部分数据是未标记的。
+4. *强化学习（Reinforcement Learning）*: 在这种类型中，算法（通常被称为“智能体”）通过与环境进行交互来学习如何完成特定任务。智能体会获得奖励或惩罚@huangMobileNetworkTraffic2022，以便调整其行为。
+
+机器学习在各个领域都有广泛的应用，包括但不限于自然语言处理、图像识别、推荐系统、金融预测@wangTimeSeriesForecastingFuzzyProbabilistic2022 等。
+
+机器学习也在中国得到了广泛的研究和应用，与国家的战略发展和人民群众的生活密切相关。例如，在医疗健康、工业制造、城市管理等领域都有出色的应用案例@wanNBDTNeuralBackedDecision2021。
+
+另外，我放置了一份 CSL 文件于 bibs 文件夹下，但目前该文件无法正常使用，只能暂时保留，等后续更新。
 
 = 写作模式
 
@@ -515,8 +527,9 @@ let (_, y, _) = (1, 2, 3)
   pagebreak() + " "
 }
 // 参考文献
-#bibliography(("bibs/ex01.bib", "bibs/ex02.bib"),
-  style: "ieee"
+#bibliography(("bibs/中文参考文献.bib", "bibs/英文参考文献.bib"),
+  style: "gb-7714-2015-numeric"
+  // style: "bibs/hunnu.csl"
 )
 
 // 致谢
