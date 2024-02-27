@@ -122,16 +122,26 @@
   }
 
   // 5.  处理页眉
+
   set page(..(if display-header {
     (
-      header: 
-      stack(
-        align(center, text(size: 字号.五号,"硕士学位论文")),
-        v(0.25em),
-        line(length: 100%, stroke: stroke-width + black),
-      )
-    )
-  }))
+      header: locate(loc => {
+      if calc.rem(counter(page).at(loc).first(), 2) == 1 {
+        stack(
+          align(center, text(size: 字号.五号,"硕士学位论文")),
+          v(0.25em),
+          line(length: 100%, stroke: 0.5pt + black),
+        )
+      } else {
+          stack(
+          align(center, text(size: 字号.五号,"你的论文标题")),
+          v(0.25em),
+          line(length: 100%, stroke: 0.5pt + black),
+        )
+      }
+    })
+  )
+}))
 
   it
 }

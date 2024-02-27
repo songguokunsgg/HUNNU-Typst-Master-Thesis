@@ -72,6 +72,7 @@
 #set heading(numbering: "1.1.")
 #import "hnu-thesis/utils/theorem.typ": definition, theorem, corollary, example, proof, algorithm
 
+
 // 符号表
 #notation[
   / DFT: 密度泛函理论 (Density functional theory)
@@ -290,6 +291,37 @@ $ F_n = floor(1 / sqrt(5) phi.alt^n) $
 ]<alg:examalgo>
 
 然后像定理一样引用 @alg:examalgo
+
+=== 算法测试
+
+#algorithm[
+  #algo(
+    ..algo_parameters,
+    title: [
+      *Input*：#math.italic("n") \
+      *Output*: $F i b(n)$ \
+    ],
+    header: none,
+    parameters: ([#math.italic("ODT")],)
+  )[
+    if $n < 0$:#i\
+      return null#d\
+    end if \
+    if $n = 0$ or $n = 1$:#i\
+      return $n$#d\
+    end if \
+    let $x <- 0$\
+    let $y <- 1$\
+    for $i <- 2$ to $n-1$:#i #comment[so dynamic!]\
+      let $z <- x+y$\
+      $x <- y$\
+      $y <- z$#d\
+    end for \
+    return $x+y$
+  ]
+]<alg:examalgo2>
+
+然后像定理一样引用 @alg:examalgo2
 
 == 参考文献
 
