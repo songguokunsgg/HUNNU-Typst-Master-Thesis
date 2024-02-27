@@ -1,4 +1,7 @@
 #import "hnu-thesis/template.typ": documentclass, tablex, fig, tlt, indent, algo, i, d, comment, code, 字体, 字号, algo_parameters
+
+#import "@preview/tablex:0.0.8": tablex, gridx, hlinex, vlinex, colspanx, rowspanx
+
 // 双面模式，会加入空白页，便于打印
 #let twoside = false
 
@@ -32,7 +35,7 @@
 )
 
 // 文稿设置
-#show: doc
+#show: doc.with(margin: (x: 28mm, y:25mm))
 
 // 封面页
 #cover()

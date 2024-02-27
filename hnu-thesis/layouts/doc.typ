@@ -7,12 +7,12 @@
   // 其他参数
   fallback: false,  // 字体缺失时使用 fallback，不显示豆腐块
   lang: "zh",
-  margin: (x: 92pt),
+  margin: (x: 28mm, y: 25mm),
   it,
 ) = {
   // 1.  默认参数
   info = (
-    title: ("基于 Typst 的", "南京大学学位论文"),
+    title: ("基于 Typst 的", "湖南师范大学学位论文"),
     author: "张三",
   ) + info
 
