@@ -1,8 +1,3 @@
-// 南京大学学位论文模板 nju-thesis-typst
-// Author: https://github.com/OrangeX4
-// Repo: https://github.com/nju-lug/nju-thesis-typst
-// 在线模板可能不会更新得很及时，如果需要最新版本，请关注 Repo
-
 #import "@preview/anti-matter:0.0.2": anti-inner-end as mainmatter-end
 #import "layouts/doc.typ": doc
 #import "layouts/preface.typ": preface
@@ -23,6 +18,7 @@
 #import "utils/style.typ": 字体
 #import "utils/style.typ": 字号
 #import "@preview/algo:0.3.3": algo, i, d, comment, code
+#import "@preview/tablex:0.0.8": tablex, gridx, hlinex, vlinex, colspanx, rowspanx
 
 // 算法格式参数
 #let algo_parameters = (
@@ -45,6 +41,14 @@
   comment-styles: (fill: rgb(0%, 0%, 0%)),
   line-number-styles: (font: "Times New Roman")
 )
+
+// 三线表规格
+#let tophlinex() = hlinex(stroke: 1.5pt)
+#let midhlinex() = hlinex(stroke: 0.75pt)
+#let bottomhlinex() = hlinex(stroke: 1.5pt)
+#let topvlinex() = vlinex(stroke: 1.5pt)
+#let midvlinex() = vlinex(stroke: 0.75pt)
+#let bottomvlinex() = vlinex(stroke: 1.5pt)
 
 // 使用函数闭包特性，通过 `documentclass` 函数类进行全局信息配置，然后暴露出拥有了全局配置的、具体的 `layouts` 和 `templates` 内部函数。
 #let documentclass(

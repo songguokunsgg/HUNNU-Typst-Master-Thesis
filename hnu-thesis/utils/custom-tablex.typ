@@ -19,8 +19,8 @@
 #let tlt(..args) = tablex(
   auto-lines: false,
   align: center + horizon,
-  hlinex(y: 0),
-  hlinex(y: 1),
+  hlinex(y: 0, stroke: 1.5pt),
+  hlinex(y: 1, stroke: 0.75pt),
   ..args,
-  hlinex(),
+  hlinex(stroke: 1.5pt),
 )

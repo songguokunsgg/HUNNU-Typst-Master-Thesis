@@ -1,6 +1,5 @@
 #import "hnu-thesis/template.typ": documentclass, tablex, fig, tlt, indent, algo, i, d, comment, code, 字体, 字号, algo_parameters
-
-#import "@preview/tablex:0.0.8": tablex, gridx, hlinex, vlinex, colspanx, rowspanx
+#import "hnu-thesis/template.typ": tablex, gridx, hlinex, vlinex, colspanx, rowspanx, tophlinex, midhlinex, bottomhlinex, midvlinex, topvlinex, bottomvlinex
 
 // 双面模式，会加入空白页，便于打印
 #let twoside = false
@@ -180,16 +179,32 @@ int main() {
   #h(50pt)
 ][
   #fig(
-    tlt(
+    gridx(
       columns: 4,
+      tophlinex(),
       [t], [1], [2], [3],
+      midhlinex(),
       [y], [0.3s], [0.4s], [0.8s],
+      bottomhlinex(),
     ),
     caption: [三线表],
   ) <timing-tlt>
 ]))
 
 表格看似复杂，但使用gpt或者chatglm都可以轻松学会转化规则，直接让AI帮助转化即可。
+
+如果你希望直接导入一个csv文件，或者，那么你有可能无法手动绘制三线。这时候你可以使用 tlt 函数。
+
+#let tbs = csv("tables/test.csv")
+#align(center, (stack(dir: ltr)[
+  #fig(
+    tlt(
+    columns: 4,
+    ..tbs.flatten()
+  ),
+  caption: [测试csv],
+) <csv>
+]))
 
 #fig(
   image("hnu-thesis/assets/vi/hunnu_log_red.png", width: 50%),
