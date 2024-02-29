@@ -17,30 +17,8 @@
 #import "@preview/i-figured:0.2.2": show-figure, show-equation
 #import "utils/style.typ": 字体
 #import "utils/style.typ": 字号
-#import "@preview/algo:0.3.3": algo, i, d, comment, code
 #import "@preview/tablex:0.0.8": tablex, gridx, hlinex, vlinex, colspanx, rowspanx
 
-// 算法格式参数
-#let algo_parameters = (
-  line-numbers: true,
-  strong-keywords: true,
-  keywords: ("if", "else", "then", "while", "for", "repeat", "do", "until", ":", "end", "and", "or", "not", "in", "to", "down", "let", "return", "goto", "end if", "end for", "end while"), // see below
-  comment-prefix: "// ",
-  indent-size: 20pt,
-  indent-guides: none,
-  indent-guides-offset: 0pt,
-  row-gutter: 10pt,
-  column-gutter: 10pt,
-  inset: 12pt,
-  fill: rgb(100%, 100%, 100%),
-  stroke: 1pt + rgb(50%, 50%, 50%),
-  radius: 4pt,
-  breakable: false,
-  block-align: center,
-  main-text-styles: (size: 12pt),
-  comment-styles: (fill: rgb(0%, 0%, 0%)),
-  line-number-styles: (font: "Times New Roman")
-)
 
 // 三线表规格
 #let tophlinex() = hlinex(stroke: 1.5pt)

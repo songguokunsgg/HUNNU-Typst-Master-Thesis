@@ -1,4 +1,4 @@
-#import "hnu-thesis/template.typ": documentclass, tablex, fig, tlt, indent, algo, i, d, comment, code, 字体, 字号, algo_parameters
+#import "hnu-thesis/template.typ": documentclass, tablex, fig, tlt, indent, 字体, 字号
 #import "hnu-thesis/template.typ": tablex, gridx, hlinex, vlinex, colspanx, rowspanx, tophlinex, midhlinex, bottomhlinex, midvlinex, topvlinex, bottomvlinex
 
 // 双面模式，会加入空白页，便于打印
@@ -70,8 +70,11 @@
 #import "@preview/ctheorems:1.1.1": *
 #show: thmrules // 添加定理环境
 #set heading(numbering: "1.1.")
-#import "hnu-thesis/utils/theorem.typ": definition, theorem, corollary, example, proof, algorithm
+#import "hnu-thesis/utils/theorem.typ": definition, theorem, corollary, example, proof, proposition
 
+#import "@preview/lovelace:0.2.0": *
+#show: setup-lovelace
+#let algorithm = algorithm.with(supplement: "算法")
 
 // 符号表
 #notation[
@@ -259,69 +262,28 @@ $ F_n = floor(1 / sqrt(5) phi.alt^n) $
 
 == 算法
 
-\#algo 表示进入算法环境。\#i表示缩进，\#d表示缩进退一格。\#comment表示注释
+- 表示无行号，+ 表示有行号
 
-如果你需要引用算法，请把它包裹在 \#algorithm，这是一项无奈之举，目前没有找到更好的方案，或者，你可以手动编号。
+#algorithm(
+  caption: [The Euclidean algorithm],
+  pseudocode-list(
+  line-number-transform: num => numbering("1:", num),
+  indentation-guide-stroke: .5pt,
+)[
+  - *input:* integers $a$ and $b$
+  - *output:* greatest common divisor of $a$ and $b$
+  + *while* $a != b$ *do*
+    + *if* $a > b$ *then*
+      + $a <- a - b$
+    + *else*
+      + $b <- b - a$
+    + *end*
+  + *end*
+  + *return* $a$
+]
+) <alg:test>
 
-#algorithm[
-  #algo(
-    ..algo_parameters,
-    title: [
-      *Input*：#math.italic("n") \
-      *Output*: $F i b(n)$ \
-    ],
-    header: none,
-    parameters: ([#math.italic("ODT")],)
-  )[
-    if $n < 0$:#i\
-      return null#d\
-    end if \
-    if $n = 0$ or $n = 1$:#i\
-      return $n$#d\
-    end if \
-    let $x <- 0$\
-    let $y <- 1$\
-    for $i <- 2$ to $n-1$:#i #comment[so dynamic!]\
-      let $z <- x+y$\
-      $x <- y$\
-      $y <- z$#d\
-    end for \
-    return $x+y$
-  ]
-]<alg:examalgo>
-
-然后像定理一样引用 @alg:examalgo
-
-=== 算法测试
-
-#algorithm[
-  #algo(
-    ..algo_parameters,
-    title: [
-      *Input*：#math.italic("n") \
-      *Output*: $F i b(n)$ \
-    ],
-    header: none,
-    parameters: ([#math.italic("ODT")],)
-  )[
-    if $n < 0$:#i\
-      return null#d\
-    end if \
-    if $n = 0$ or $n = 1$:#i\
-      return $n$#d\
-    end if \
-    let $x <- 0$\
-    let $y <- 1$\
-    for $i <- 2$ to $n-1$:#i #comment[so dynamic!]\
-      let $z <- x+y$\
-      $x <- y$\
-      $y <- z$#d\
-    end for \
-    return $x+y$
-  ]
-]<alg:examalgo2>
-
-然后像定理一样引用 @alg:examalgo2
+这是@alg:test
 
 == 参考文献
 

@@ -14,11 +14,9 @@
 #let example = thmplain("example", "示例").with(numbering: none)
 #let proof = thmplain(
   "proof",
-  "Proof",
+  "证明",
   base: "theorem",
   bodyfmt: body => [#body #h(1fr) $square$]
 ).with(numbering: none)
 
 #let proposition = thmbox("proposition", "命题", inset: (x: 1.2em, top: 1em))
-
-#let algorithm = thmbox("algorithm", "算法", inset: (x: 1.2em, top: 1em))
