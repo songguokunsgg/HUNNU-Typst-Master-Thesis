@@ -10,7 +10,7 @@
   // 其他参数
   depth: 3,
   title: text(font: 字体.黑体)[
-    目　　录
+    目 录
   ],
   outlined: true,
   title-vspace: 32pt,
@@ -23,7 +23,7 @@
   size: (字号.四号, 字号.小四),
   // 垂直间距
   vspace: (25pt, 14pt),
-  indent: (0pt, 18pt, 28pt),
+  indent: (0pt, 24pt, 18pt),
   // 一级标题不显示点号
   fill: (none, auto),
   ..args,

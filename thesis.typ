@@ -69,7 +69,13 @@
 
 #import "@preview/ctheorems:1.1.1": *
 #show: thmrules // 添加定理环境
-#set heading(numbering: "1.1.")
+#set heading(numbering: (..args) => {
+  if args.pos().len() == 1 {
+    return numbering("第1章", ..args.pos())
+  } else {
+    return numbering("1. 1", ..args.pos())
+  }
+})
 #import "hnu-thesis/utils/theorem.typ": definition, theorem, corollary, example, proof, proposition
 
 #import "@preview/lovelace:0.2.0": *

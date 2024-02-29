@@ -128,6 +128,8 @@
   // 居中对齐
   set align(center)
 
+  v(30pt)
+
   // 匿名化处理去掉封面标识
   if (anonymous) {
     v(50pt)

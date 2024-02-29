@@ -5,11 +5,11 @@
 #let theorem = thmbox("theorem", "定理", inset: (x: 1.2em, top: 1em))
 #let corollary = thmplain(
   "corollary",
-  "Corollary",
+  "推论",
   base: "theorem",
   titlefmt: strong
 )
-#let definition = thmbox("definition", "Definition", inset: (x: 2.2em, top: 1em))
+#let definition = thmbox("definition", "定义", inset: (x: 2.2em, top: 1em))
 
 #let example = thmplain("example", "示例").with(numbering: none)
 #let proof = thmplain(
